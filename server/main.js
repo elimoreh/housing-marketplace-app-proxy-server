@@ -1,8 +1,12 @@
 const express = require('express');
 const axios = require('axios');
 const bodyParser = require('body-parser');
+const compression = require('compression');
 
 const app = express();
+
+app.use(compression({ level: 1 }))
+
 // setting up port
 app.set('PORT', 3000);
 // serving static files and setting middleware
