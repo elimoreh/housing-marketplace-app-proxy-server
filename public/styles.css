@@ -1,0 +1,104 @@
+body {
+    margin: 0px;
+}
+.topBanner{
+    width: 100%;
+    max-height: 75px;
+    display: inline-block;
+    overflow: hidden;
+}
+.airbnbIcon{
+    height: 34px; 
+    width: 34px; 
+    display: inline-block;
+    fill: #ee575d;
+    margin: 0px 24px 0px 24px;
+    padding: 6px 0px 24px 0px
+}
+
+.searchBar{
+    display: inline-block;
+    background-color: #ffffff;
+    -webkit-transition: box-shadow 200ms ease-in;
+    -moz-transition: box-shadow 200ms ease-in;
+    transition: box-shadow 200ms ease-in;
+    border: 1px solid #EBEBEB;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 48px;
+    width: 460px;
+    margin: 18px 24px 18px 0px;
+}
+
+.searchInput{
+    overflow: hidden;
+    position: absolute;
+    background-color: transparent;
+    display: inline-block;
+    border: 0px;
+    margin: 14px 0px 14px 40px;
+    padding: 0px;
+    text-overflow: ellipsis;
+    font-weight: 800;
+    font-size: 17px;
+}
+.fa-search{
+    position: absolute;;
+    margin-top: 15.5px;
+    margin-left: 10px;
+    color: #484848;
+}
+
+/* .bannerItems {
+    display: inline-block;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+} */
+
+.bannerItem.1 {
+    margin: 10px 10px 10px 10px;
+    position: absolute;
+    display: inline-block;
+    float: left;
+    padding: 10px;
+}
+
+
+
+.listingContainer{
+    margin-left: 8.3%;
+    width: 52.6%;
+    min-height: 830px;
+    padding-right: 24px;
+    padding-top: 24px;
+    display: table;
+}
+
+
+#bookingPortal{
+    position: sticky;
+    top: 10%;
+    background: white;
+    padding-top: 24px;
+    z-index: 10;
+    float: right;
+    display: block;
+    margin-right: 12%;
+}
+
+#review{
+    width: 47.8%;
+    margin-left: 9%;
+}
+
+::placeholder {
+    color: #757575;
+    font-weight: 600;
+  }
+
+input:focus{
+    outline: none;
+}
+
