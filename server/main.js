@@ -13,28 +13,10 @@ app.set('PORT', 3000);
 app.use(express.static('./public'));
 app.use(bodyParser.json());
 
-// routing request to correct servers 
-const route = {
-    'messages': '3001',
-    'photos': '3002',
-    'booking': '3003',
-    'listinginfo': '3004',
-}
-
-app.get(`/messages`, (req, res) => {
-    const listingId = req.query.listingid;
-    axios.get(`http://localhost:3001/messages/?listingid=${listingId}`)
-    .then((result) => {
-        res.status(200).send(result.data);
-    })
-    .catch((err) => {
-        res.status(500).send(err);
-    });
-}); 
-
+//aws ec2 taken down
 app.get(`/photos`, (req, res) => {
     const listingId = req.query.listingid;
-    axios.get(`http://localhost:3002/photos/?listingid=${listingId}`)
+    axios.get(`http://ec2-3-18-212-71.us-east-2.compute.amazonaws.com/photos/?listingid=${listingId}`)
     .then((result) => {
         res.status(200).send(result.data);
     })
@@ -46,7 +28,7 @@ app.get(`/photos`, (req, res) => {
 
 app.get(`/booking`, (req, res) => {
     const listingId = req.query.listingid;
-    axios.get(`http://localhost:3003/booking/?listingid=${listingId}`)
+    axios.get(`http://ec2-52-53-150-158.us-west-1.compute.amazonaws.com/booking/?listingid=${listingId}`)
     .then((result) => {
         res.status(200).send(result.data);
     })
@@ -58,7 +40,19 @@ app.get(`/booking`, (req, res) => {
 
 app.get(`/listinginfo`, (req, res) => {
     const listingId = req.query.listingid;
-    axios.get(`http://localhost:3004/listinginfo/?listingid=${listingId}`)
+    axios.get(`http://ec2-13-57-31-14.us-west-1.compute.amazonaws.com/listinginfo/`)
+    .then((result) => {
+        res.status(200).send(result.data);
+    })
+    .catch((err) => {
+        res.status(500).send(err);
+    });
+}); 
+
+//waiting for aws link
+app.get(`/messages`, (req, res) => {
+    const listingId = req.query.listingid;
+    axios.get(`http://localhost:3001/messages/?listingid=${listingId}`)
     .then((result) => {
         res.status(200).send(result.data);
     })
